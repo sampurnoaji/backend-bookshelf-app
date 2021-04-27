@@ -12,13 +12,14 @@ const saveBook = (request, h) => {
     readPage,
     reading,
   } = request.payload;
+  console.log(request.payload);
 
   const id = nanoid(16);
   const insertedAt = new Date().toISOString();
   const updatedAt = insertedAt;
   const finished = pageCount === readPage;
 
-  if (name === '') {
+  if (!name) {
     const response = h.response({
       status: 'fail',
       message: 'Gagal menambahkan buku. Mohon isi nama buku',
