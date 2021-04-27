@@ -51,6 +51,7 @@ const saveBook = (request, h) => {
     updatedAt,
   };
   books.push(newBook);
+  console.log(newBook);
 
   const isSuccess = books.filter((book) => book.id === id).length > 0;
 
